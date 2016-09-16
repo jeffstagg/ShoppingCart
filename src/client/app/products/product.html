@@ -1,0 +1,11 @@
+<article>
+  <header>{{vm.product.name}}</header>
+  <ul>
+    <li>${{vm.product.price}}</li>
+    <li>{{vm.product.rating}} / 5</li>
+  </ul>
+  <footer>
+    Quantity: <input type="number" ng-model="product.quantity">
+    <button ng-click="vm.addToCart(product, quantity)">Add To Cart</button>
+  </footer>
+</article>
