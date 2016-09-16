@@ -6,19 +6,24 @@
     .component('productList', {
       templateUrl: 'app/products/product-list.html',
       controller: ProductListController,
-      controllerAs: 'vm',
-      bindings: {
-        product: '='
-      }
+      controllerAs: 'vm'
     });
 
-  function ProductListController() {
+  // ProductsController.$inject = ['$q', 'productsService', 'logger'];
+  // /* @ngInject */
+  function ProductListController($q, productsService, logger) {
     var vm = this;
+    vm.products = [];
 
     init();
 
     function init() {
-
+      productsService.getProducts().then(
+        function(products) {
+          vm.products = products;
+        }, function(error) {
+          logger.error(error);
+        });
     }
   }
 
