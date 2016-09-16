@@ -1,0 +1,15 @@
+<aside>
+  <header>
+    Your Cart
+  </header>
+
+  <ul>
+    <li ng-repeat="product in vm.cart.products">{{product.name}}</li>
+  </ul>
+
+  <footer>
+    Subtotal: {{vm.cart.total}}
+    Shipping: {{vm.shippingMethod}}
+    Total: {{vm.cart.total}}
+  </footer>
+</aside>

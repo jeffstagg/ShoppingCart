@@ -9,8 +9,6 @@
       controllerAs: 'vm'
     });
 
-  // ProductsController.$inject = ['$q', 'productsService', 'logger'];
-  // /* @ngInject */
   function ProductListController($q, productsService, logger) {
     var vm = this;
     vm.products = [];

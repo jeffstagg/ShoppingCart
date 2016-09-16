@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for ./src/client/app/layout/shell.controller.js</title>
+    <title>Code coverage report for ./src/client/app/shopping-cart/shopping-cart-summary.component.js</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../../../prettify.css">
     <link rel="stylesheet" href="../../../../base.css">
@@ -12,16 +12,16 @@
     </style>
 </head>
 <body>
-<div class="header high">
-    <h1>Code coverage report for <span class="entity">./src/client/app/layout/shell.controller.js</span></h1>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">./src/client/app/shopping-cart/shopping-cart-summary.component.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">40% <small>(4 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(5 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">20% <small>(1 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">40% <small>(4 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">./src/client/app/layout/</a> &#187; shell.controller.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">./src/client/app/shopping-cart/</a> &#187; shopping-cart-summary.component.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -57,40 +57,34 @@
 30
 31
 32
-33
-34
-35
-36</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+33</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -99,36 +93,33 @@
   'use strict';
 &nbsp;
   angular
-    .module('app.layout')
-    .controller('ShellController', ShellController);
+    .module('app.cart')
+    .component('shoppingCartSummary', {
+      templateUrl: 'app/shopping-cart/shopping-cart-summary.html',
+      controller: ShoppingCartSummaryController,
+      controllerAs: 'vm'
+    });
 &nbsp;
-  ShellController.$inject = ['$rootScope', '$timeout', 'config', 'logger'];
-  /* @ngInject */
-  function ShellController($rootScope, $timeout, config, logger) {
-    var vm = this;
-    vm.busyMessage = 'Please wait ...';
-    vm.isBusy = true;
-    $rootScope.showSplash = true;
-    vm.navline = {
-      title: config.appTitle,
-      text: 'Created by John Papa',
-      link: 'http://twitter.com/john_papa'
-    };
+<span class="fstat-no" title="function not covered" >  function ShoppingCartSummaryController(</span>
+    $q,
+    shoppingCartService,
+    ShoppingCartModel,
+    logger) {
+<span class="cstat-no" title="statement not covered" >    var vm = this;</span>
+<span class="cstat-no" title="statement not covered" >    vm.cart = new ShoppingCartModel();</span>
 &nbsp;
-    activate();
+<span class="cstat-no" title="statement not covered" >    init();</span>
 &nbsp;
-    function activate() {
-      logger.success(config.appTitle + ' loaded!', null);
-      hideSplash();
-    }
-&nbsp;
-    function hideSplash() {
-      //Force a 1 second delay so we can see the splash.
-      $timeout(function() {
-        $rootScope.showSplash = false;
-      }, 1000);
+<span class="fstat-no" title="function not covered" >    function init() {</span>
+<span class="cstat-no" title="statement not covered" >      shoppingCartService.getShoppingCart().then(</span>
+<span class="fstat-no" title="function not covered" >        function(cart) {</span>
+<span class="cstat-no" title="statement not covered" >          vm.cart = cart;</span>
+        }, <span class="fstat-no" title="function not covered" >function(error) {</span>
+<span class="cstat-no" title="statement not covered" >          logger.error(error);</span>
+        });
     }
   }
+&nbsp;
 })();
 &nbsp;</pre></td></tr>
 </table></pre>
