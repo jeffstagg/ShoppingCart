@@ -3,8 +3,8 @@
 
   angular.module('app', [
     'app.core',
-    'app.widgets',
-    'app.admin',
+    'app.config',
+    'app.cart',
     'app.products',
     'app.models',
     'app.layout'

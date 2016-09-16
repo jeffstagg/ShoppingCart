@@ -16,7 +16,7 @@
       {
         state: 'products',
         config: {
-          url: '/',
+          url: '/products',
           templateUrl: 'app/products/product-list.html',
           controller: 'ProductsController',
           controllerAs: 'vm',

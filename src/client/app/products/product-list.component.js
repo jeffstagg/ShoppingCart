@@ -3,16 +3,16 @@
 
   angular
     .module('app.products')
-    .component('product', {
-      templateUrl: 'app/products/product.html',
-      controller: ProductController,
+    .component('productList', {
+      templateUrl: 'app/products/product-list.html',
+      controller: ProductListController,
       controllerAs: 'vm',
       bindings: {
         product: '='
       }
     });
 
-  function ProductController() {
+  function ProductListController() {
     var vm = this;
 
     init();
@@ -21,5 +21,5 @@
 
     }
   }
-      
+
 })();
