@@ -17,14 +17,10 @@
         state: 'products',
         config: {
           url: '/',
-          templateUrl: 'app/products/products.html',
+          templateUrl: 'app/products/product-list.html',
           controller: 'ProductsController',
           controllerAs: 'vm',
-          title: 'Products',
-          settings: {
-            nav: 1,
-            content: '<i class="fa fa-dashboard"></i> Products'
-          }
+          title: 'Products'
         }
       }
     ];

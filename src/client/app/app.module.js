@@ -6,6 +6,7 @@
     'app.widgets',
     'app.admin',
     'app.products',
+    'app.models',
     'app.layout'
   ]);
 
