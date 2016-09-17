@@ -1,6 +1,5 @@
 (function() {
   var ShoppingCartModel = function() {
-    this.id = null;
     this.products = [];
     this.shippingMethod = {};
     this.subtotal = 0;
