@@ -8,7 +8,8 @@
   function ShoppingCartService($q, config) {
 
     return {
-      getShoppingCart: getShoppingCart
+      getShoppingCart: getShoppingCart,
+      addProductToCart: addProductToCart
     };
 
     function getShoppingCart() {
@@ -19,6 +20,24 @@
       deferred.resolve(cart ? cart : []);
 
       return deferred.promise;
+    }
+
+    function addProductToCart(cart, product, quantity) {
+      cart.products.push(
+        {
+          product: product,
+          quantity: quantity
+        });
+      updateCartTotals(cart);
+      sessionStorage.setItem(config.shoppingCartStorageKey, cart);
+    }
+
+    function updateCartTotals(cart) {
+      var subtotal = 0;
+      cart.products.forEach(function(product) {
+        subtotal += product.product.price * product.quantity;
+      });
+      cart.subtotal = subtotal;
     }
 
   }
