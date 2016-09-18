@@ -8,17 +8,23 @@
       controller: ProductController,
       controllerAs: 'vm',
       bindings: {
-        product: '='
+        product: '=',
+        cart: '='
       }
     });
 
-  function ProductController() {
+  function ProductController($q, shoppingCartService) {
     var vm = this;
+    vm.addToCart = addToCart;
 
     init();
 
     function init() {
 
+    }
+
+    function addToCart(quantity) {
+      shoppingCartService.addProductToCart(vm.cart, vm.product, quantity);
     }
   }
 

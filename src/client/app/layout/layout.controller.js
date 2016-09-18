@@ -2,14 +2,13 @@
   'use strict';
 
   angular
-    .module('app.cart')
-    .controller('ShoppingCartController', ShoppingCartController);
+    .module('app.layout')
+    .controller('LayoutController', LayoutController);
 
-  ShoppingCartController.$inject = ['$q', 'shoppingCartService', 'logger'];
+  LayoutController.$inject = ['$q', 'shoppingCartService', 'logger'];
   /* @ngInject */
-  function ShoppingCartController($q, shoppingCartService, logger) {
+  function LayoutController($q, shoppingCartService, logger) {
     var vm = this;
-    vm.products = [];
 
     init();
 
