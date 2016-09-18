@@ -1,0 +1,19 @@
+<form>
+  <div class="form-group">
+    <label for="ShippingMethod">Please select a shipping method:</label>
+    <select name="ShippingMethod"
+      ng-options="method as (method.shippingTitle + ' - ' + method.shippingCost) for method in vm.shippingMethods" 
+      ng-model="vm.selectedShippingMethod">
+    </select>
+
+    <button 
+      class="btn btn-primary" 
+      type="button"
+      ng-click="vm.handleClose()">OK</button>
+    <button 
+      class="btn btn-danger" 
+      type="button"
+      ng-click="vm.handleDismiss()">Cancel</button>
+  </div>
+  
+</form>

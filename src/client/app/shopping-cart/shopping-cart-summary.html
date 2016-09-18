@@ -3,13 +3,16 @@
     Your Cart
   </header>
 
-  <ul>
-    <li ng-repeat="product in vm.cart.products">{{product.name}}</li>
-  </ul>
-
   <footer>
-    Subtotal: {{vm.cart.subtotal}}
-    Shipping: {{vm.shippingMethod}}
-    Total: {{vm.cart.total}}
+    <ul>
+      <li>Subtotal: {{vm.cart.subtotal}}</li>
+      <li ng-if="vm.cart.shippingMethod">Shipping: 
+        <span ng-if="vm.cart.shippingMethod"> {{vm.cart.shippingMethod.shippingCost}}</span>
+        <button ng-click="vm.openShippingModal()">Change Shipping Method</button></li>
+      <li>Total: {{vm.cart.total}}</li>
+    </ul>
+    
+    
+    
   </footer>
 </aside>

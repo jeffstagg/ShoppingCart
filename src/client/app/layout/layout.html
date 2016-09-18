@@ -1,10 +1,14 @@
 <header>
-  <h1>Your Cart</h1>
+  <h1>BASE Canopy Store</h1>
 </header>
 
-<main>
-  <product-list cart="vm.cart"></product-list>
-  <shopping-cart-summary cart="vm.cart"></shopping-cart-summary>
+<main class="row">
+  <product-list 
+    cart="vm.cart"
+    class="col-xs-9"></product-list>
+  <shopping-cart-summary
+    cart="vm.cart"
+    class="col-xs-3"></shopping-cart-summary>
 </main>
 
 
