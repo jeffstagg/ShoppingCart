@@ -6,7 +6,10 @@
     .component('productList', {
       templateUrl: 'app/products/product-list.html',
       controller: ProductListController,
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      bindings: {
+        cart: '='
+      }
     });
 
   function ProductListController($q, productsService, logger) {

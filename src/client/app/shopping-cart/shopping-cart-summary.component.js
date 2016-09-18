@@ -6,26 +6,22 @@
     .component('shoppingCartSummary', {
       templateUrl: 'app/shopping-cart/shopping-cart-summary.html',
       controller: ShoppingCartSummaryController,
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      bindings: {
+        cart: '='
+      }
     });
 
   function ShoppingCartSummaryController(
     $q,
     shoppingCartService,
-    ShoppingCartModel,
-    logger) {
+    logger,
+    $scope) {
     var vm = this;
-    vm.cart = new ShoppingCartModel();
 
     init();
 
     function init() {
-      shoppingCartService.getShoppingCart().then(
-        function(cart) {
-          vm.cart = cart;
-        }, function(error) {
-          logger.error(error);
-        });
     }
   }
 

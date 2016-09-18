@@ -5,7 +5,7 @@
     .module('app.cart')
     .factory('shoppingCartService', ShoppingCartService);
 
-  function ShoppingCartService($q, config) {
+  function ShoppingCartService($q, config, ShoppingCartModel) {
 
     return {
       getShoppingCart: getShoppingCart,
@@ -16,8 +16,8 @@
       var deferred = $q.defer();
 
       //return empty array if no cart yet
-      var cart = sessionStorage.getItem(config.shoppingCartStorageKey);
-      deferred.resolve(cart ? cart : []);
+      var cart = JSON.parse(sessionStorage.getItem(config.shoppingCartStorageKey));
+      deferred.resolve(cart ? cart : new ShoppingCartModel());
 
       return deferred.promise;
     }
@@ -29,13 +29,13 @@
           quantity: quantity
         });
       updateCartTotals(cart);
-      sessionStorage.setItem(config.shoppingCartStorageKey, cart);
+      sessionStorage.setItem(config.shoppingCartStorageKey, JSON.stringify(cart));
     }
 
     function updateCartTotals(cart) {
       var subtotal = 0;
       cart.products.forEach(function(product) {
-        subtotal += product.product.price * product.quantity;
+        subtotal += parseFloat(product.product.price * product.quantity);
       });
       cart.subtotal = subtotal;
     }

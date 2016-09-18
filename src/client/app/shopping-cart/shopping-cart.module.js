@@ -4,6 +4,7 @@
   angular.module('app.cart', [
     'app.core',
     'app.models',
-    'app.config'
+    'app.config',
+    'ui.bootstrap'
   ]);
 })();

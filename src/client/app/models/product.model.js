@@ -1,7 +1,6 @@
 (function() {
   var ProductModel = function() {
-    this.id = null;
-    this.title = null;
+    this.name = null;
     this.price = 0;
     this.rating = 3;
   };
