@@ -12,9 +12,13 @@
       }
     });
 
-  function ProductListController($q, productsService, logger) {
+  function ProductListController(
+    $q,
+    productsService,
+    logger) {
     var vm = this;
     vm.products = [];
+    vm.saveProducts = saveProducts;
 
     init();
 
@@ -25,6 +29,10 @@
         }, function(error) {
           logger.error(error);
         });
+    }
+
+    function saveProducts() {
+      productsService.saveProducts(vm.products);
     }
   }
 

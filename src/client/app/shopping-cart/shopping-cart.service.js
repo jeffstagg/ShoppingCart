@@ -31,7 +31,7 @@
           quantity: quantity
         });
       updateCartTotals(cart);
-      sessionStorage.setItem(config.shoppingCartStorageKey, JSON.stringify(cart));
+      saveCart(cart);
     }
 
     function updateCartTotals(cart) {
@@ -44,6 +44,8 @@
       cart.total = cart.shippingMethod.shippingCost ?
         parseFloat((cart.subtotal + cart.shippingMethod.shippingCost).toFixed(2)) :
         parseFloat(cart.subtotal.toFixed(2));
+
+      saveCart(cart);
     }
 
     function getShippingMethods() {
@@ -70,6 +72,10 @@
     function setShippingMethod(cart, method) {
       cart.shippingMethod = method;
       updateCartTotals(cart);
+    }
+
+    function saveCart(cart) {
+      sessionStorage.setItem(config.shoppingCartStorageKey, JSON.stringify(cart));
     }
 
   }

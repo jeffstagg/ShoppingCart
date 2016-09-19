@@ -5,9 +5,13 @@
     .module('app.layout')
     .controller('LayoutController', LayoutController);
 
-  LayoutController.$inject = ['$q', 'shoppingCartService', 'logger'];
+  LayoutController.$inject = ['$q', 'shoppingCartService', 'productsService', 'logger'];
   /* @ngInject */
-  function LayoutController($q, shoppingCartService, logger) {
+  function LayoutController(
+    $q,
+    shoppingCartService,
+    productsService,
+    logger) {
     var vm = this;
 
     init();

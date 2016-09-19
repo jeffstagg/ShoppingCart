@@ -6,7 +6,17 @@
   </header>
   <ul>
     <li>${{vm.product.price}}</li>
-    <li>{{vm.product.rating}} / 5</li>
+    <li>{{vm.product.viewRating}} / 5</li>
+    <li><a ng-click="vm.showRateProduct = !vm.showRateProduct">Rate Product</a></li>
+    <li ng-show="vm.showRateProduct">
+      <select ng-model="vm.product.ratingValue">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button ng-click="vm.rateProduct(vm.product.ratingValue)">Rate!</button>
   </ul>
   <footer>
     Quantity: <input type="number" ng-model="product.quantity">
