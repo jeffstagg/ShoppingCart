@@ -1,10 +1,13 @@
 # ShoppingCart
 
-**Generated from HotTowel Angular**
+**A Coding Exercise**
 
->*Opinionated Angular style guide for teams by [@john_papa](//twitter.com/john_papa)*
+### Acceptance Criteria:
+- Using Angular, create a small shopping page. No need to create a backend, mock data is fine. This doesn’t need a lot of CSS magic, we are primarily looking at Angular style and approach.
 
->More details about the styles and patterns used in this app can be found in my [Angular Style Guide](https://github.com/johnpapa/angularjs-styleguide) and my [Angular Patterns: Clean Code](http://jpapa.me/ngclean) course at [Pluralsight](http://pluralsight.com/training/Authors/Details/john-papa) and working in teams.
+- There number of items, each with a price, an average rating system, and an input box for user to input quantity he/she wants to order. The initial average ratings can have a hardcoded beginning value, but they should reflect the ratings given by a user during a session.
+
+- Include a sidebar on the right that has a running total of the bill. Include a button that opens a modal containing different options for shipping speeds along with their prices. The shipping selection should only apply to the bill if the user clicks a confirm button in the modal.
 
 ## Prerequisites
 
@@ -22,7 +25,7 @@
 
     >Refer to these [instructions on how to not require sudo](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
 
-## Running HotTowel
+## Running Shopping Cart
 
 ### Linting
  - Run code analysis using `gulp vet`. This runs jshint, jscs, and plato.
@@ -42,91 +45,6 @@
 ### Running the optimized code
  - Run the optimize project from the build folder with `gulp serve-build`
 
-## Exploring HotTowel
-HotTowel Angular starter project
-
-### Structure
-The structure also contains a gulpfile.js and a server folder. The server is there just so we can serve the app using node. Feel free to use any server you wish.
-
-	/src
-		/client
-			/app
-			/content
-
-### Installing Packages
-When you generate the project it should run these commands, but if you notice missing packages, run these again:
-
- - `npm install`
- - `bower install`
-
-### The Modules
-The app has 4 feature modules and depends on a series of external modules and custom but cross-app modules
-
-```
-app --> [
-        app.admin --> [
-            app.core,
-            app.widgets
-        ],
-        app.dashboard --> [
-            app.core,
-            app.widgets
-        ],
-        app.layout --> [
-            app.core
-        ],
-        app.widgets,
-		app.core --> [
-			ngAnimate,
-			ngSanitize,
-			ui.router,
-			blocks.exception,
-			blocks.logger,
-			blocks.router
-		]
-    ]
-```
-
-#### core Module
-Core modules are ones that are shared throughout the entire application and may be customized for the specific application. Example might be common data services.
-
-This is an aggregator of modules that the application will need. The `core` module takes the blocks, common, and Angular sub-modules as dependencies.
-
-#### blocks Modules
-Block modules are reusable blocks of code that can be used across projects simply by including them as dependencies.
-
-##### blocks.logger Module
-The `blocks.logger` module handles logging across the Angular app.
-
-##### blocks.exception Module
-The `blocks.exception` module handles exceptions across the Angular app.
-
-It depends on the `blocks.logger` module, because the implementation logs the exceptions.
-
-##### blocks.router Module
-The `blocks.router` module contains a routing helper module that assists in adding routes to the $routeProvider.
-
-## Gulp Tasks
-
-### Task Listing
-
-- `gulp help`
-
-    Displays all of the available gulp tasks.
-
-### Code Analysis
-
-- `gulp vet`
-
-    Performs static code analysis on all javascript files. Runs jshint and jscs.
-
-- `gulp vet --verbose`
-
-    Displays all files affected and extended information about the code analysis.
-
-- `gulp plato`
-
-    Performs code analysis using plato on all javascript files. Plato generates a report in the reports folder.
 
 ### Testing
 

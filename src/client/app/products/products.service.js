@@ -5,7 +5,9 @@
     .module('app.products')
     .factory('productsService', ProductsService);
 
-  function ProductsService($q, config) {
+  function ProductsService(
+    $q,
+    config) {
 
     var allProducts = [
       {
