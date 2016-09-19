@@ -1,18 +1,23 @@
 <aside>
   <header>
-    Your Cart
+    <h3>Your Cart</h3>
   </header>
 
   <footer>
     <ul>
-      <li>Subtotal: {{vm.cart.subtotal}}</li>
-      <li ng-if="vm.cart.shippingMethod">Shipping: 
-        <span ng-if="vm.cart.shippingMethod"> {{vm.cart.shippingMethod.shippingCost}}</span>
-        <button ng-click="vm.openShippingModal()">Change Shipping Method</button></li>
-      <li>Total: {{vm.cart.total}}</li>
+      <li>
+        Subtotal: <b>${{vm.cart.subtotal}}</b>
+      </li>
+      <li ng-if="vm.cart.shippingMethod">
+        Shipping: 
+        <span ng-if="vm.cart.shippingMethod">
+          <b>${{vm.cart.shippingMethod.shippingCost}}</b>
+        </span>
+      </li>
+      <li>
+        <a ng-click="vm.openShippingModal()">Change Shipping Method</a>
+      </li>
+      <li>Total: <b>${{vm.cart.total}}</b></li>
     </ul>
-    
-    
-    
   </footer>
 </aside>

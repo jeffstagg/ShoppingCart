@@ -15,8 +15,8 @@
     });
 
   function ProductController(
-    $q, 
-    shoppingCartService, 
+    $q,
+    shoppingCartService,
     productsService) {
     var vm = this;
     vm.addToCart = addToCart;

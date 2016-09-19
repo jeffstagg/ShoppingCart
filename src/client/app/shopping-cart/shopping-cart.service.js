@@ -42,7 +42,7 @@
       cart.subtotal = parseFloat(subtotal.toFixed(2));
 
       cart.total = cart.shippingMethod.shippingCost ?
-        parseFloat((cart.subtotal + cart.shippingMethod.shippingCost).toFixed(2)) : 
+        parseFloat((cart.subtotal + cart.shippingMethod.shippingCost).toFixed(2)) :
         parseFloat(cart.subtotal.toFixed(2));
 
       saveCart(cart);
