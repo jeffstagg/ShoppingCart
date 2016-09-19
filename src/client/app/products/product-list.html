@@ -1,3 +1,7 @@
 <section class="products">
-	<product ng-repeat="product in vm.products" product=product cart="vm.cart"></product>
+	<product 
+    ng-repeat="product in vm.products"
+    product=product
+    cart="vm.cart"
+    save-products="vm.saveProducts()"></product>
 </section>

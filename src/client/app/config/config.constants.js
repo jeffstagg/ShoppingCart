@@ -11,6 +11,7 @@
 
       // storage keys
       shoppingCartStorageKey: 'SC-shoppingCart',
+      productsStorageKey: 'SC-products',
 
       // logger settings
       logToConsole: true,
