@@ -74,7 +74,7 @@
     }
 
     function getRating(product) {
-      if(product.ratings.length > 0) {
+      if (product.ratings.length > 0) {
         var sum = product.ratings.reduce(function(sum, num) {
           return sum + num;
         }, 0);
