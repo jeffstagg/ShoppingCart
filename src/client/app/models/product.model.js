@@ -1,8 +1,9 @@
 (function() {
   var ProductModel = function() {
     this.name = null;
+    this.manufacturer = null;
     this.price = 0;
-    this.rating = 3;
+    this.ratings = [];
   };
 
   var module = angular.module('app.models');

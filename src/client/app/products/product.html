@@ -1,5 +1,9 @@
 <article>
-  <header>{{vm.product.name}}</header>
+  <header>
+    <b>
+      {{vm.product.manufacturer}} - {{vm.product.name}}
+    </b>
+  </header>
   <ul>
     <li>${{vm.product.price}}</li>
     <li>{{vm.product.rating}} / 5</li>
