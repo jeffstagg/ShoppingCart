@@ -5,7 +5,10 @@
     .module('app.cart')
     .factory('shoppingCartService', ShoppingCartService);
 
-  function ShoppingCartService($q, config, ShoppingCartModel) {
+  function ShoppingCartService(
+    $q,
+    config,
+    ShoppingCartModel) {
 
     return {
       getShoppingCart: getShoppingCart,
